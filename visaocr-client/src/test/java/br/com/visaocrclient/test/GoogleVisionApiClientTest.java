@@ -39,11 +39,9 @@ public class GoogleVisionApiClientTest {
 		List<String> resultado = cliente.enviarImagensParaEfetuarOCR(caminhosImagens);
 		
 		org.junit.Assert.assertFalse(resultado.isEmpty());
-		org.junit.Assert.assertTrue(resultado.get(0).contains("COU) 343482"));
+		org.junit.Assert.assertTrue(resultado.get(0).contains("C00:325062"));
 		
 		
 	}
-	
-	
 	
 }

@@ -88,6 +88,7 @@ public class GoogleVisionApiClient {
 							new Feature()
 							.setType("TEXT_DETECTION")
 							.setMaxResults(Integer.valueOf(1))));
+			
 			requisicoes.add(request);
 			
 			LOGGER.debug("Criando imagem para envio: "+caminho);
@@ -99,6 +100,7 @@ public class GoogleVisionApiClient {
 			Vision.Images.Annotate annotate =
 					vision.images()
 					.annotate(new BatchAnnotateImagesRequest().setRequests(requisicoes));
+			annotate.setDisableGZipContent(true);
 			LOGGER.info("Enviando consulta TEXT_DETECTION");
 			BatchAnnotateImagesResponse batchResponse = annotate.execute();
 			LOGGER.info("Recuperando resposta TEXT_DETECTION");
