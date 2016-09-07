@@ -1,0 +1,15 @@
+.settings/**
+visaocr-client/.settings/**
+visaocr-client/.classpath
+visaocr-client/.projetct
+visaocr-client/target/**
+visaocr-core/target/**
+visaocr-core/.classpath
+visaocr-core/.projetct
+visaocr-core/.settings/**
+visaocr-parser/.settings/**
+visaocr-parser/.classpath
+visaocr-parser/.projetct
+visaocr-parser/target/**
+.project
+
