@@ -6,7 +6,7 @@ import lombok.Data;
 public class DadosNota {
 
 	private String cnpj;
-	private String cco;
+	private String coo;
 	private String data;
 	private String valorTotal;
 	

@@ -13,13 +13,41 @@ public class ExtratorDadosNotaTest {
 		    "OBRIGADO VOLTE SEMPRE\r\nAplicativo REZENDE SISTEMAS TTUA\r\nBEMATECH MP-4000 TH FI ECF-IF\r\nVERSAO:01. 00.01 ECF 008 LJ:0001\r\nQQQQQQQQQTETITYEIT 12/08/2016 16:30:57\r\nFAB:BE09 121010001 13165 10\r\n";
 	
 	@Test
-	public void deve_extrair_dados_da_nota_corretamente() {
-		ExtratorDadosNota extrator = new ExtratorDadosNota(textoNota);
+	public void deve_extrair_cnpj_corretamente() {
+		ProcessoExtracaoDadosNota extrator = new ProcessoExtracaoDadosNota(textoNota);
 		
-		DadosNota dadosNota = extrator.extrairTodasInformacoes();
+		DadosNota dadosNota = extrator.extrairNotaApenasComCnpj();
 		
-		Assert.assertTrue(StringUtils.isNotEmpty(dadosNota.getCnpj()));
+		Assert.assertTrue(StringUtils.equals(dadosNota.getCnpj(), "54480496000177"));
 		
+	}
+	
+	@Test
+	public void deve_extrair_coo_corretamente() {
+		ProcessoExtracaoDadosNota extrator = new ProcessoExtracaoDadosNota(textoNota);
+		
+		DadosNota dadosNota = extrator.extrairNotaApenasComCoo();
+		
+		Assert.assertTrue(StringUtils.equals(dadosNota.getCoo(), "325062"));
+	}
+	
+	@Test
+	public void deve_extrair_valor_total_corretamente() {
+		ProcessoExtracaoDadosNota extrator = new ProcessoExtracaoDadosNota(textoNota);
+		
+		DadosNota dadosNota = extrator.extrairNotaApenasComValorTotal();
+		
+		Assert.assertTrue(StringUtils.equals(dadosNota.getValorTotal(), "1,75"));
+	}
+	
+	
+	@Test
+	public void deve_extrair_data_corretamente() {
+		ProcessoExtracaoDadosNota extrator = new ProcessoExtracaoDadosNota(textoNota);
+		
+		DadosNota dadosNota = extrator.extrairNotaApenasComData();
+		
+		Assert.assertTrue(StringUtils.equals(dadosNota.getData(), "12/08/2016"));
 	}
 	
 }
