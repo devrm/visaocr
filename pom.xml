@@ -8,8 +8,8 @@
 	<name>Projeto para realizar a leitura e parse das informações da nota fiscal paulista</name>
 	<modules>
 		<module>visaocr-core</module>
-		<module>visaocr-client</module>
 		<module>visaocr-parser</module>
+		<module>visaocr-domain</module>
 	</modules>
 
 

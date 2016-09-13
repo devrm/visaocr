@@ -1,4 +1,4 @@
-package br.com.visaocrparser;
+package br.com.visaocr.domain;
 
 import lombok.Data;
 

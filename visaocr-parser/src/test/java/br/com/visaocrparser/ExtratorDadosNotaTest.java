@@ -4,6 +4,8 @@ import org.apache.commons.lang3.StringUtils;
 import org.junit.Assert;
 import org.junit.Test;
 
+import br.com.visaocr.domain.DadosNota;
+
 public class ExtratorDadosNotaTest {
 
 	

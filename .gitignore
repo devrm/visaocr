@@ -3,6 +3,10 @@ visaocr-client/.settings/**
 visaocr-client/.classpath
 visaocr-client/.projetct
 visaocr-client/target/**
+visaocr-domain/.settings/**
+visaocr-domain/.classpath
+visaocr-domain/.projetct
+visaocr-domain/target/**
 visaocr-core/target/**
 visaocr-core/.classpath
 visaocr-core/.projetct

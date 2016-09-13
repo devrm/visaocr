@@ -1,5 +1,6 @@
 package br.com.visaocrparser;
 
+import br.com.visaocr.domain.DadosNota;
 import br.com.visaocrparser.extrator.ExtratorCnpj;
 import br.com.visaocrparser.extrator.ExtratorCoo;
 import br.com.visaocrparser.extrator.ExtratorDataNota;
