@@ -8,7 +8,9 @@ public abstract class Extrator {
 
 	protected static Pattern patternCnpj;
 	protected static Pattern patternCoo;
+	protected static Pattern patternCooMesmaLinha;
 	protected static Pattern patternValorTotal;
+	protected static Pattern patternMonetarioValorTotal;
 	protected static Pattern patternDataNota;
 	protected String textoParaExtrair;
 	
@@ -21,6 +23,8 @@ public abstract class Extrator {
 		patternCoo = Pattern.compile(Regex.EXTRATOR_COO);
 		patternValorTotal = Pattern.compile(Regex.EXTRATOR_VALOR_TOTAL);
 		patternDataNota = Pattern.compile(Regex.EXTRATOR_DATA_NOTA);
+		patternCooMesmaLinha = Pattern.compile(Regex.EXTRATOR_COO_MESMA_LINHA);
+		patternMonetarioValorTotal = Pattern.compile(Regex.EXTRATOR_MONETARIO_VALOR_TOTAL);
 	}
 
 	protected abstract String extrair();

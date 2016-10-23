@@ -10,12 +10,12 @@ import org.junit.Test;
 
 import br.com.visaocr.domain.DadosNota;
 
-public class ExtratorDadosNotaTest {
+public class ExtratorDadosNota10Test {
 	
 	String textoNota = "";
 	{
 		try {
-			textoNota = new String(Files.readAllBytes(Paths.get(ExtratorDadosNotaTest.class.getResource("/teste1.txt").getPath())));
+			textoNota = new String(Files.readAllBytes(Paths.get(ExtratorDadosNota10Test.class.getResource("/teste10.txt").getPath())));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}	

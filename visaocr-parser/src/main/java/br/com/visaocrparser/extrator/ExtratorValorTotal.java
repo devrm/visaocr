@@ -17,7 +17,15 @@ public final class ExtratorValorTotal extends Extrator {
 		Matcher matcher = Extrator.patternValorTotal.matcher(super.textoParaExtrair);
 		
 		if (matcher.find()) {
-			resultado = matcher.group();			
+			resultado = matcher.group(2);
+			
+			Matcher matcherValorMonetario = Extrator.patternMonetarioValorTotal.matcher(resultado);
+			
+			if (matcherValorMonetario.find()) {
+				resultado = matcherValorMonetario.group();
+			}
+			
+			resultado = resultado.replaceAll("\\s*", "").replace(".", ",");
 		}
 		
 		return resultado;

@@ -10,12 +10,12 @@ import org.junit.Test;
 
 import br.com.visaocr.domain.DadosNota;
 
-public class ExtratorDadosNotaTest {
+public class ExtratorDadosNota6Test {
 	
 	String textoNota = "";
 	{
 		try {
-			textoNota = new String(Files.readAllBytes(Paths.get(ExtratorDadosNotaTest.class.getResource("/teste1.txt").getPath())));
+			textoNota = new String(Files.readAllBytes(Paths.get(ExtratorDadosNota6Test.class.getResource("/teste6.txt").getPath())));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}	
@@ -34,7 +34,7 @@ public class ExtratorDadosNotaTest {
 	public void deve_extrair_coo_corretamente() {
 		ProcessoExtracaoDadosNota extrator = new ProcessoExtracaoDadosNota(textoNota);
 		DadosNota dadosNota = extrator.extrairNotaApenasComCoo();
-		Assert.assertTrue(StringUtils.equals(dadosNota.getCoo(), "324981"));
+		Assert.assertTrue(StringUtils.equals(dadosNota.getCoo(), "343393"));
 	}
 	
 	@Test
@@ -43,7 +43,7 @@ public class ExtratorDadosNotaTest {
 		
 		DadosNota dadosNota = extrator.extrairNotaApenasComValorTotal();
 		
-		Assert.assertTrue(StringUtils.equals(dadosNota.getValorTotal(), "8,50"));
+		Assert.assertTrue(StringUtils.equals(dadosNota.getValorTotal(), "18,00"));
 	}
 	
 	
@@ -53,7 +53,7 @@ public class ExtratorDadosNotaTest {
 		
 		DadosNota dadosNota = extrator.extrairNotaApenasComData();
 		
-		Assert.assertTrue(StringUtils.equals(dadosNota.getData(), "12/08/2016"));
+		Assert.assertTrue(StringUtils.equals(dadosNota.getData(), "12/08/2015"));
 	}
 	
 }

@@ -10,12 +10,12 @@ import org.junit.Test;
 
 import br.com.visaocr.domain.DadosNota;
 
-public class ExtratorDadosNotaTest {
+public class ExtratorDadosNota5Test {
 	
 	String textoNota = "";
 	{
 		try {
-			textoNota = new String(Files.readAllBytes(Paths.get(ExtratorDadosNotaTest.class.getResource("/teste1.txt").getPath())));
+			textoNota = new String(Files.readAllBytes(Paths.get(ExtratorDadosNota5Test.class.getResource("/teste5.txt").getPath())));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}	
@@ -34,7 +34,7 @@ public class ExtratorDadosNotaTest {
 	public void deve_extrair_coo_corretamente() {
 		ProcessoExtracaoDadosNota extrator = new ProcessoExtracaoDadosNota(textoNota);
 		DadosNota dadosNota = extrator.extrairNotaApenasComCoo();
-		Assert.assertTrue(StringUtils.equals(dadosNota.getCoo(), "324981"));
+		Assert.assertTrue(StringUtils.equals(dadosNota.getCoo(), "343430"));
 	}
 	
 	@Test
@@ -43,7 +43,7 @@ public class ExtratorDadosNotaTest {
 		
 		DadosNota dadosNota = extrator.extrairNotaApenasComValorTotal();
 		
-		Assert.assertTrue(StringUtils.equals(dadosNota.getValorTotal(), "8,50"));
+		Assert.assertTrue(StringUtils.equals(dadosNota.getValorTotal(), "8,00"));
 	}
 	
 	
