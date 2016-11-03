@@ -1,5 +1,7 @@
 package br.com.visaocr.domain;
 
+import java.time.format.DateTimeFormatter;
+
 import lombok.Data;
 import lombok.ToString;
 
@@ -7,6 +9,8 @@ import lombok.ToString;
 @ToString
 public class DadosNota {
 
+	public static final DateTimeFormatter formater = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+	
 	private String cnpj;
 	private String coo;
 	private String data;
